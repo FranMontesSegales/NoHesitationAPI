@@ -1,10 +1,11 @@
-const { Schema, model, types } = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
 
 
 const itemsSchema = new Schema({
   name: String,
   description: String,
-  localization:  { type: types.ObjectId, ref: 'Zone' },
+  image: String,
+  localization:  { type: Types.ObjectId, ref: 'Zone' },
   type: String,
 });
 

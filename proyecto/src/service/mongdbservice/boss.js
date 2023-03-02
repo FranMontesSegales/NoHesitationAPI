@@ -1,5 +1,5 @@
 
-const { Boss } = require('../../models')
+const  Boss  = require('../../models/Boss')
 
 async function createBoss(body) {
     return new Boss(body).save()

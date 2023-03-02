@@ -7,5 +7,5 @@ module.exports = async config => {
     user, pass,
   } = config;
   await mongoose.connect(`mongodb+srv://${user}:${pass}@cluster0.w1jp5x4.mongodb.net/?retryWrites=true&w=majority`);
-  logger.info('CONECTADO!');
+  logger.info('PAA TOMA CARNAL DALE AGUACATE!');
 };

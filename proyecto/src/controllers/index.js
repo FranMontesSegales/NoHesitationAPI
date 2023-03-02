@@ -1,5 +1,5 @@
 function bienvenida(req, res) {
-    res.status(200).send('Repiola compadre andas bien picante');
+    res.status(200).send('Repiola carnal, andaas bien picante');
   }
   
   module.exports = {

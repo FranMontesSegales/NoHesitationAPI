@@ -1,4 +1,4 @@
-const { Item } = require('../../models')
+const { Item } = require('../../models/Item')
 
 async function createItem(body) {
     return new Item(body).save()

@@ -1,13 +1,13 @@
-const { Schema, model, types } = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
 
 
 const charactersSchema = new Schema({
   name: String,
   description: String,
-  localization:  [{ type: types.ObjectId, ref: 'Zone' }],
+  image: String,
+  localization:  [{ type: Types.ObjectId, ref: 'Zone' }],
   locDescription: String,
-  item:  [{ type: types.ObjectId, ref: 'Item' },]
-
+  item:  [{ type: Types.ObjectId, ref: 'Item' }],
 });
 
 module.exports = model('character', charactersSchema);

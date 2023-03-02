@@ -1,5 +1,6 @@
+const boosservice= require('../service/mongdbservice/zone')
 async function createZone(req, res){
-    const zone = await new Zone(req.body);
+    const zone = await zoneservice.createZone(req.body);
     return res.send(zone);
 }
 

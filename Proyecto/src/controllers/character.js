@@ -1,6 +1,6 @@
-const boosservice= require('../service/mongdbservice/character')
+const mongodbService = require('../service/mongdbservice');
 async function createCharacter(req, res){
-    const character = await  characterservice.createCharacter(req.body);
+    const character = await  mongodbService.createCharacter(req.body);
     return res.send(character);
 }
 

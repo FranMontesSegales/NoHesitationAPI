@@ -4,4 +4,6 @@ async function createZone(body) {
     return new Zone(body).save()
 }
 
-module.exports = {createZone}
+module.exports = {
+    createZone,
+}

@@ -6,7 +6,6 @@ const charactersSchema = new Schema({
   description: String,
   image: String,
   localization:  [{ type: Types.ObjectId, ref: 'Zone' }],
-  locDescription: String,
   item:  [{ type: Types.ObjectId, ref: 'Item' }],
 });
 

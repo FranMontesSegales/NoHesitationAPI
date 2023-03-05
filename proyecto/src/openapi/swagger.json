@@ -1,0 +1,216 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "version": "0.0.1",
+        "title": "swagger",
+        "description": "RESTFullAPI",
+        "termsOfService": "http://swagger.io/terms/"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000/"
+        }
+    ],
+
+    "paths": {
+        "/boss": {
+            "post": {
+                "tags": [
+                    "boss"
+                ],
+                "summary": "Crear boss",
+                "description": "crea un boss",
+                "requestBody": {
+                    "description": "Crear boss",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PostBoss"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "boss creada",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/boss"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/boss/{name}": {
+            "put": {
+                "tags": [
+                    "boss"
+                ],
+                "summary": "Editar boss",
+                "description": "Editar un boss",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "description": "Pon el nombre",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Body",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PostBoss"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": " editado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/boss"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "boss"
+                ],
+                "summary": "Eliminar boss",
+                "description": "Eliminar boss",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "description": "Nombre del boss",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "boss Eliminada",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeleteBoss"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+
+    "components": {
+        "schemas": {
+            "boss": {
+                "type": "object",
+                "properties": {
+                    "results": {
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "format": "int64"
+                                },
+                                "deathblow": {
+                                    "type": "string",
+                                    "format": "int64"
+                                },
+                                "usefulTools": {
+                                    "type": "string",
+                                    "format": "int64"
+                                },
+                                "image": {
+                                    "type": "string",
+                                    "format": "int64"
+                                },
+                                "localization": {
+                                    "type": "string",
+                                    "format": "int64"
+                                },
+                                "item": {
+                                    "type": "string",
+                                    "format": "int64"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "PostBoss": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string",
+                        "format": "int64"
+                    },
+                    "deathblow": {
+                        "type": "string",
+                        "format": "int64"
+                    },
+                    "usefulTools": {
+                        "type": "string",
+                        "format": "int64"
+                    },
+                    "image": {
+                        "type": "string",
+                        "format": "int64"
+                    },
+                    "localization": {
+                        "type": "string",
+                        "format": "int64"
+                    },
+                    "item": {
+                        "type": "string",
+                        "format": "int64"
+                    }
+                }
+            },
+            "PutBoss": {
+                "type": "object",
+                "properties": {
+                    "nombre": {
+                        "type": "string"
+                    },
+                    "contenido": {
+                        "type": "string",
+                        "format": "int64"
+                    }
+                }
+            },
+            "DeleteBoss": {
+                "type": "object",
+                "properties": {
+                    "nombre": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

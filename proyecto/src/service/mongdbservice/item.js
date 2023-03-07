@@ -5,12 +5,26 @@ async function createItem(body) {
     return  objeto;
 }
 
-async function DeleteItem(itemId) {
-    const idItem = new ObjectId(itemId)
-    return new deleteOne(idItem)
+async function editItem(body) {
+    const { name, ...editado } = body;
+    const itemActualizado = await Item.findOneAndUpdate({ name },editado);
+    return itemActualizado;
+}
+
+async function deleteItem(name) {
+    const deletedItem = await Item.deleteOne(name);
+    return deletedItem;
+  
+}
+
+function getItem(filters) {
+    return Item.find(filters);
+  
 }
 
 module.exports = {
     createItem,
-    DeleteItem,
+    editItem,
+    deleteItem,
+    getItem
 }

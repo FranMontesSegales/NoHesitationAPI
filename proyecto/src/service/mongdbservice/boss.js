@@ -8,21 +8,17 @@ async function createBoss(body) {
 
 async function editBoss(body) {
     const { name, ...editado } = body;
-    const bossActualizado = await Boss.findOneAndUpdate(
-      { name },
-      editado
-    );
+    const bossActualizado = await Boss.findOneAndUpdate({ name },editado);
     return bossActualizado;
 }
 
 async function deleteBoss(name) {
-    const filter = { name: name };
-    const deletedBoss = await Boss.deleteOne(filter);
+    const deletedBoss = await Boss.deleteOne(name);
     return deletedBoss;
   
 }
 
-function getAllBoss(filters) {
+function getBoss(filters) {
     return Boss.find(filters);
   
 }
@@ -30,5 +26,5 @@ module.exports = {
     createBoss,
     editBoss,
     deleteBoss,
-    getAllBoss
+    getBoss
 };

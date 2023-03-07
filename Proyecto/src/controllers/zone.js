@@ -3,19 +3,43 @@ const zoneservice= require('../service/mongdbservice/zone')
 async function createZone(req, res){
     const zone = await zoneservice.createZone(req.body);
     return res.send({zone});
-}
-
-async function deleteZone(req, res){
-    const itemId = req.params;
-    try{
-        const eliminar = await zoneservice.deleteZone(itemId)
-        return res.status(200).send(eliminar);
-    } catch(err){
-        return res.status(200).send("Zona no encontrado");
+ 
+ }
+ 
+ async function editZone(req, res, next) {
+    try {
+        const zone = await zoneservice.editZone(req.body);
+        res.status(200).send(zone);
+    } catch (error) {
+        error.status = 409;
+        next(error);
     }
-}
+ }
+ 
+ async function deleteZone(req, res, next) {
+    try {
+      const deletedZone = await zoneservice.deleteZone(req.params);
+      res.status(200).send(deletedZone);
+      logger.info('Usuario eliminado');
+    } catch (error) {
+      error.statusCode = 404;
+      logger.error('Usuario no encontrado');
+      next(error);
+    }
+ }
+ 
+ async function getZone(req, res,) {
+    try {
+      const zone = await zoneservice.getZone();
+      return res.status(201).send(zone);
+    } catch (error) {
+      return res.estatus(200).send("Boss no encontrado");
+    }
+  }
 
 module.exports = {
     createZone,
+    editZone,
     deleteZone,
+    getZone
 };

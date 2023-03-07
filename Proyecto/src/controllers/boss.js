@@ -10,6 +10,7 @@ async function createBoss(req, res){
 
 async function editBoss(req, res, next) {
     try {
+
         const boss = await boosservice.editBoss(req.body);
         res.status(200).send(boss);
 
@@ -19,10 +20,9 @@ async function editBoss(req, res, next) {
     }
 }
 
-
 async function deleteBoss(req, res, next) {
     try {
-      const deletedBoss = await boosservice.deleteBoss(req.params.name);
+      const deletedBoss = await boosservice.deleteBoss(req.params);
       res.status(200).send(deletedBoss);
       logger.info('Usuario eliminado');
     } catch (error) {
@@ -32,14 +32,12 @@ async function deleteBoss(req, res, next) {
     }
 }
 
-async function getBoss(req, res, next) {
+async function getBoss(req, res,) {
     try {
-      const boss = await boosservice.getAllBoss();
-      logger.info('Usuarios mostrados');
+      const boss = await boosservice.getBoss();
       return res.status(201).send(boss);
     } catch (error) {
-      logger.error('Usuarios no encontrados');
-      return next(error);
+      return res.estatus(200).send("Boss no encontrado");
     }
   }
 

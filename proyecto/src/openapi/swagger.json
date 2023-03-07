@@ -14,6 +14,28 @@
 
     "paths": {
         "/boss": {
+            "get": {
+                "tags": [
+                    "boss"
+                ],
+                "summary": "Crear boss",
+                "description": "crea un boss",
+                "responses": {
+                    "201": {
+                        "description": "boss creada",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items":{
+                                        "$ref": "#/components/schemas/boss"
+                                    }
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "post": {
                 "tags": [
                     "boss"
@@ -42,7 +64,7 @@
                         }
                     }
                 }
-            }
+            }   
         },
         "/boss/{name}": {
             "put": {
@@ -118,6 +140,28 @@
         },
 
         "/character": {
+            "get": {
+                "tags": [
+                    "character"
+                ],
+                "summary": "Crear character",
+                "description": "crea un character",
+                "responses": {
+                    "201": {
+                        "description": "character creada",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items":{
+                                        "$ref": "#/components/schemas/character"
+                                    }
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "post": {
                 "tags": [
                     "character"
@@ -148,7 +192,7 @@
                 }
             }
         },
-        "/character/password:secret/{name}": {
+        "/character/{name}": {
             "put": {
                 "tags": [
                     "character"
@@ -171,7 +215,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/PostCharacter"
+                                "$ref": "#/components/schemas/PutCharacter"
                             }
                         }
                     }
@@ -182,7 +226,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/character"
+                                    "$ref": "#/components/schemas/PutCharacter"
                                 }
                             }
                         }
@@ -222,6 +266,28 @@
         },
 
         "/item": {
+            "get": {
+                "tags": [
+                    "item"
+                ],
+                "summary": "Crear item",
+                "description": "crea un item",
+                "responses": {
+                    "201": {
+                        "description": "item creada",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items":{
+                                        "$ref": "#/components/schemas/item"
+                                    }
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "post": {
                 "tags": [
                     "item"
@@ -252,7 +318,7 @@
                 }
             }
         },
-        "/item/password:secret/{name}": {
+        "/item/{name}": {
             "put": {
                 "tags": [
                     "item"
@@ -326,6 +392,28 @@
         },
 
         "/zone": {
+            "get": {
+                "tags": [
+                    "zone"
+                ],
+                "summary": "Crear zone",
+                "description": "crea un zone",
+                "responses": {
+                    "201": {
+                        "description": "zone creada",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items":{
+                                        "$ref": "#/components/schemas/zone"
+                                    }
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "post": {
                 "tags": [
                     "zone"
@@ -356,7 +444,7 @@
                 }
             }
         },
-        "/zone/password:secret/{name}": {
+        "/zone/{name}": {
             "put": {
                 "tags": [
                     "zone"
@@ -390,7 +478,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/zone"
+                                    "$ref": "#/components/schemas/PostZone"
                                 }
                             }
                         }

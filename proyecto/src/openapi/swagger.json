@@ -2,8 +2,8 @@
     "openapi": "3.0.3",
     "info": {
         "version": "0.0.1",
-        "title": "swagger",
-        "description": "RESTFullAPI",
+        "title": "NoHesitationAPI",
+        "description": "API de Sekiro",
         "termsOfService": "http://swagger.io/terms/"
     },
     "servers": [

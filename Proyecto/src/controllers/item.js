@@ -21,10 +21,10 @@ async function deleteItem(req, res, next) {
     try {
       const deletedItem = await itemservice.deleteItem(req.params);
       res.status(200).send(deleteItem);
-      logger.info('Usuario eliminado');
+      logger.info('Item eliminado');
     } catch (error) {
       error.statusCode = 404;
-      logger.error('Usuario no encontrado');
+      logger.error('Item no encontrado');
       next(error);
     }
 }

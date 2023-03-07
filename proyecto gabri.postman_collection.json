@@ -64,7 +64,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "PutBoss",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -92,7 +92,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "DelBoss",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -143,6 +143,63 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "GetItem",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/item",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PutItem",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/item",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DelItem",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/item",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"item"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -176,6 +233,63 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "GetCharacter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/item",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PutCharacter",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/character",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"character"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delCharacter",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/character",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"character"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -196,6 +310,63 @@
 								}
 							}
 						},
+						"url": {
+							"raw": "http://localhost:3000/zone",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"zone"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetZone",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/zone",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"zone"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PutZone",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/zone",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"zone"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DelZone",
+					"request": {
+						"method": "DELETE",
+						"header": [],
 						"url": {
 							"raw": "http://localhost:3000/zone",
 							"protocol": "http",

@@ -23,10 +23,10 @@ async function deleteCharacter(req, res, next) {
     try {
       const deleteCharacter = await characterervice.deleteCharacter(req.params);
       res.status(200).send(deleteCharacter);
-      logger.info('Usuario eliminado');
+      logger.info('Character eliminado');
     } catch (error) {
       error.statusCode = 404;
-      logger.error('Usuario no encontrado');
+      logger.error('Character no encontrado');
       next(error);
     }
 }

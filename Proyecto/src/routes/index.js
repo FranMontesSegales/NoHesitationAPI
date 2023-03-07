@@ -32,6 +32,4 @@ router.post('/zone', createZone);
 router.put('/zone/:name', editZone);
 router.delete('/zone/:name', deleteZone);
 
-
-
 module.exports = router;

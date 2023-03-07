@@ -1,7 +1,16 @@
-const { Item } = require('../../models/Item')
+const { Item } = require('../../models')
 
 async function createItem(body) {
-    return new Item(body).save()
+    const objeto = await new Item(body).save()
+    return  objeto;
 }
 
-module.exports = {createItem}
+async function DeleteItem(itemId) {
+    const idItem = new ObjectId(itemId)
+    return new deleteOne(idItem)
+}
+
+module.exports = {
+    createItem,
+    DeleteItem,
+}

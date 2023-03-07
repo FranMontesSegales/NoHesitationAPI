@@ -14,7 +14,7 @@ const logger = createLogger({
         colorize(),
         printf(info => `[${info.timestamp}] ${info.level} ${info.message}`),
       ),
-      silent: process.env.NODE_ENV === 'test',
+      silent: process.env.NODE_ENV === 'NoHesitationAPI',
     }),
   ],
   exitOnError: false,

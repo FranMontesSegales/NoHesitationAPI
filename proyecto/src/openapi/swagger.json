@@ -36,7 +36,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/boss"
+                                    "$ref": "#/components/schemas/PostBoss"
                                 }
                             }
                         }
@@ -67,7 +67,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/PostBoss"
+                                "$ref": "#/components/schemas/PutBoss"
                             }
                         }
                     }
@@ -78,7 +78,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/boss"
+                                    "$ref": "#/components/schemas/PutBoss"
                                 }
                             }
                         }
@@ -104,7 +104,7 @@
                 ],
                 "responses": {
                     "201": {
-                        "description": "boss Eliminada",
+                        "description": "boss Eliminado",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -115,7 +115,320 @@
                     }
                 }
             }
+        },
+
+        "/character": {
+            "post": {
+                "tags": [
+                    "character"
+                ],
+                "summary": "Crear character",
+                "description": "crea un character",
+                "requestBody": {
+                    "description": "Crear character",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PostCharacter"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "character creado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PostCharacter"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/character/password:secret/{name}": {
+            "put": {
+                "tags": [
+                    "character"
+                ],
+                "summary": "Editar character",
+                "description": "Editar un character",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "description": "Pon el nombre",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Body",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PostCharacter"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": " editado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/character"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "character"
+                ],
+                "summary": "Eliminar character",
+                "description": "Eliminar character",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "description": "Nombre del character",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "character Eliminado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeleteCharacter"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/item": {
+            "post": {
+                "tags": [
+                    "item"
+                ],
+                "summary": "Crear item",
+                "description": "crea un item",
+                "requestBody": {
+                    "description": "Crear item",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PostItem"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "item creado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PostItem"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/item/password:secret/{name}": {
+            "put": {
+                "tags": [
+                    "item"
+                ],
+                "summary": "Editar item",
+                "description": "Editar un item",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "description": "Pon el nombre",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Body",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PostItem"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": " editado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/item"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "item"
+                ],
+                "summary": "Eliminar item",
+                "description": "Eliminar item",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "description": "Nombre del item",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "item Eliminado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeleteItem"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/zone": {
+            "post": {
+                "tags": [
+                    "zone"
+                ],
+                "summary": "Crear zone",
+                "description": "crea un zone",
+                "requestBody": {
+                    "description": "Crear zone",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PostZone"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "itezonem creado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PostZone"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/zone/password:secret/{name}": {
+            "put": {
+                "tags": [
+                    "zone"
+                ],
+                "summary": "Editar zone",
+                "description": "Editar un zone",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "description": "Pon el nombre",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Body",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PostZone"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": " editado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/zone"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "zone"
+                ],
+                "summary": "Eliminar zone",
+                "description": "Eliminar zone",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "description": "Nombre del zone",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "zone Eliminado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeleteZone"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
+
     },
 
     "components": {
@@ -147,11 +460,11 @@
                                     "format": "int64"
                                 },
                                 "localization": {
-                                    "type": "string",
+                                    "type": "objectId",
                                     "format": "int64"
                                 },
                                 "item": {
-                                    "type": "string",
+                                    "type": "objectId",
                                     "format": "int64"
                                 }
                             }
@@ -160,6 +473,38 @@
                 }
             },
             "PostBoss": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string",
+                        "format": "int64"
+                    },
+                    "deathblow": {
+                        "type": "string",
+                        "format": "int64"
+                    },
+                    "usefulTools": {
+                        "type": "string",
+                        "format": "int64"
+                    },
+                    "image": {
+                        "type": "string",
+                        "format": "int64"
+                    },
+                    "localization": {
+                        "type": "objectId",
+                        "format": "int64"
+                    },
+                    "item": {
+                        "type": "objectId",
+                        "format": "int64"
+                    }
+                }
+            },
+            "PutBoss": {
                 "type": "object",
                 "properties": {
                     "name": {
@@ -191,18 +536,6 @@
                     }
                 }
             },
-            "PutBoss": {
-                "type": "object",
-                "properties": {
-                    "nombre": {
-                        "type": "string"
-                    },
-                    "contenido": {
-                        "type": "string",
-                        "format": "int64"
-                    }
-                }
-            },
             "DeleteBoss": {
                 "type": "object",
                 "properties": {
@@ -210,7 +543,248 @@
                         "type": "string"
                     }
                 }
+            },
+
+            "character": {
+                "type": "object",
+                "properties": {
+                    "results": {
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "format": "int64"
+                                },
+                                "image": {
+                                    "type": "string",
+                                    "format": "int64"
+                                },
+                                "localization": {
+                                    "type": "objectId",
+                                    "format": "int64"
+                                },
+                                "item": {
+                                    "type": "objectId",
+                                    "format": "int64"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "PostCharacter": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string",
+                        "format": "int64"
+                    },
+                    "image": {
+                        "type": "string",
+                        "format": "int64"
+                    },
+                    "localization": {
+                        "type": "objectId",
+                        "format": "int64"
+                    },
+                    "item": {
+                        "type": "objectId",
+                        "format": "int64"
+                    }
+                }
+            },
+            "PutCharacter": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string",
+                        "format": "int64"
+                    },
+                    "image": {
+                        "type": "string",
+                        "format": "int64"
+                    },
+                    "localization": {
+                        "type": "objectId",
+                        "format": "int64"
+                    },
+                    "item": {
+                        "type": "objectId",
+                        "format": "int64"
+                    }
+                }
+            },
+            "DeleteCharacter": {
+                "type": "object",
+                "properties": {
+                    "nombre": {
+                        "type": "string"
+                    }
+                }
+            },
+
+            "item": {
+                "type": "object",
+                "properties": {
+                    "results": {
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "format": "int64"
+                                },
+                                "image": {
+                                    "type": "string",
+                                    "format": "int64"
+                                },
+                                "localization": {
+                                    "type": "objectId",
+                                    "format": "int64"
+                                },
+                                "type": {
+                                    "type": "string",
+                                    "format": "int64"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "PostItem": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string",
+                        "format": "int64"
+                    },
+                    "image": {
+                        "type": "string",
+                        "format": "int64"
+                    },
+                    "localization": {
+                        "type": "objectId",
+                        "format": "int64"
+                    },
+                    "type": {
+                        "type": "string",
+                        "format": "int64"
+                    }
+                }
+            },
+            "PutItem": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string",
+                        "format": "int64"
+                    },
+                    "image": {
+                        "type": "string",
+                        "format": "int64"
+                    },
+                    "localization": {
+                        "type": "objectId",
+                        "format": "int64"
+                    },
+                    "type": {
+                        "type": "string",
+                        "format": "int64"
+                    }
+                }
+            },
+            "DeleteItem": {
+                "type": "object",
+                "properties": {
+                    "nombre": {
+                        "type": "string"
+                    }
+                }
+            },
+
+            "zone": {
+                "type": "object",
+                "properties": {
+                    "results": {
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "format": "int64"
+                                },
+                                "image": {
+                                    "type": "string",
+                                    "format": "int64"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "PostZone": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string",
+                        "format": "int64"
+                    },
+                    "image": {
+                        "type": "string",
+                        "format": "int64"
+                    }
+                }
+            },
+            "PutZone": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string",
+                        "format": "int64"
+                    },
+                    "image": {
+                        "type": "string",
+                        "format": "int64"
+                    }
+                }
+            },
+            "DeleteZone": {
+                "type": "object",
+                "properties": {
+                    "nombre": {
+                        "type": "string"
+                    }
+                }
             }
+
         }
     }
 }

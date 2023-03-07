@@ -1,9 +1,13 @@
-const { Zone } = require('../../models/Zone')
+const { Zone } = require('../../models')
 
 async function createZone(body) {
-    return new Zone(body).save()
+   const zona = await new Zone(body).save()
+   return  zona;
 }
+
+
 
 module.exports = {
     createZone,
+   // deleteZone,
 }

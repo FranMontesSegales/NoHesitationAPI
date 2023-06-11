@@ -20,10 +20,10 @@ async function createZone(req, res){
     try {
       const deletedZone = await zoneservice.deleteZone(req.params);
       res.status(200).send(deletedZone);
-      logger.info('Usuario eliminado');
+      logger.info('Zone eliminado');
     } catch (error) {
       error.statusCode = 404;
-      logger.error('Usuario no encontrado');
+      logger.error('Zone no encontrado');
       next(error);
     }
  }
@@ -33,7 +33,7 @@ async function createZone(req, res){
       const zone = await zoneservice.getZone();
       return res.status(201).send(zone);
     } catch (error) {
-      return res.estatus(200).send("Boss no encontrado");
+      return res.estatus(200).send("Zone no encontrado");
     }
   }
 

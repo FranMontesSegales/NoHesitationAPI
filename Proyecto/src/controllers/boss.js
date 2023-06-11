@@ -24,10 +24,10 @@ async function deleteBoss(req, res, next) {
     try {
       const deletedBoss = await boosservice.deleteBoss(req.params);
       res.status(200).send(deletedBoss);
-      logger.info('Usuario eliminado');
+      logger.info('Boss eliminado');
     } catch (error) {
       error.statusCode = 404;
-      logger.error('Usuario no encontrado');
+      logger.error('Boss no encontrado');
       next(error);
     }
 }

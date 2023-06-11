@@ -10,6 +10,7 @@
   "author": "xXElDestructorDeMinitas_777Xx",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "docker-compose": "^0.23.19",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
